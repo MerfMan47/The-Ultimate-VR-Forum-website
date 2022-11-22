@@ -1,0 +1,409 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     /* base page is light blue */
+     /* nav is dark blue */
+     /* nav text is white */
+     /* some other text may be black */
+     background-color: lightgray;
+     /* border: solid black;
+     border-width: 0px 50px; */
+     font-family: sans-serif;
+     font-size: 16;
+     background-color: #dfdfdf;
+}
+nav {
+     background: #222;
+     padding: 0 15px;
+}
+ul {
+     list-style: none;
+}
+a {
+     text-decoration: none;
+     color: white;
+}
+.menu,
+.submenu {   
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+.item {
+    padding: 10px 20px 10px 20px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/* *****************************************
+/* ADDITIONAL STYLES
+/****************************************** */
+
+
+/* Mobile menu */
+.menu {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .menu li a {
+     display: block;
+     padding: 15px 5px;
+ }
+ .menu li.subitem a {
+     padding: 15px;
+ }
+ .toggle {
+     order: 1;
+     font-size: 20px;
+ }
+ .item.button {
+     order: 2;
+ }
+ .item {
+     order: 3;
+     width: 100%;
+     text-align: center;
+     display: none;
+ }
+ .active .item {
+     display: block;
+ }
+ .button.secondary { /* divider between buttons and menu links */
+     border-bottom: 1px #444 solid;
+ }
+
+
+
+/* Submenu up from mobile screens */
+.submenu {
+     display: none;
+ }
+ .submenu-active .submenu {
+    display: block;
+ }
+ .has-submenu i {
+     font-size: 12px;
+ }
+ .has-submenu > a::after {
+     font-family: "Font Awesome 5 Free";
+     font-size: 12px;
+     line-height: 16px;
+     font-weight: 900; 
+     content: "\f078";
+     color: white;
+     padding-left: 5px;
+ }
+ .subitem a {
+     padding: 10px 15px;
+ }
+ .submenu-active {
+     background-color: #111;
+     border-radius: 3px;
+ }
+
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+     .menu {
+         justify-content: center;
+     }
+     .logo {
+         flex: 1;
+     }
+     .item.button {
+         width: auto;
+         order: 1;
+         display: block;
+     }
+     .toggle {
+         flex: 1;
+         text-align: right;
+         order: 2;
+     }
+     /* Button up from tablet screen */
+     .menu li.button a {
+         padding: 10px 15px;
+         margin: 5px 0;
+     }
+     .button a {
+         background: #0080ff;
+         border: 1px royalblue solid;
+     }
+     .button.secondary {
+         border: 0;
+     }
+     .button.secondary a {
+         background: transparent;
+         border: 1px #0080ff solid;  
+     }
+     .button a:hover {
+         text-decoration: none;
+     }
+     .button:not(.secondary) a:hover {
+         background: royalblue;
+         border-color: darkblue;
+     }
+ }
+
+
+/* Desktop menu */
+@media all and (min-width: 960px){
+     .menu {
+          align-items: flex-start;
+          flex-wrap: nowrap;
+          background: none;
+     }
+     .logo {
+          order: 0;
+     }
+     .item {
+          order: 1;
+          position: relative;
+          display: block;
+          width: auto;
+     }
+     .button {
+          order: 2;
+     }
+     .submenu-active .submenu {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 68px;
+          background: #111;
+     }
+     .toggle {
+          display: none;
+     }
+     .submenu-active {
+          border-radius: 0;
+     }
+}
+
+
+/* EVERYTHING ABOVE THIS LINE MUST BECOME A PARTIAL LATER AND IS GENERAL STYLE */
+
+/* ========================================================================================= */
+
+/* EVERYTHING BELOW THIS LINE IS FOR THIS SPECIFIC PAGE AND WILL NOT BECOME A PATRIAL */
+
+
+
+
+/* *****************************************
+/* Carousel
+/****************************************** */
+/* .slider-wrapper {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+   
+  .slides-container {
+    height: calc(100vh - 2rem);
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+   
+  .slide {
+    width: 100%;
+    height: 100%;
+    flex: 1 0 100%;
+  } */
+
+  /* .slide-arrow {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 4rem;
+    background-color: white;
+    border: none;
+    width: 2rem;
+    font-size: 3rem;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 100ms;
+  }
+   
+  .slide-arrow:hover,
+  .slide-arrow:focus {
+    opacity: 1;
+  }
+   
+  #slide-arrow-prev {
+    left: 0;
+    padding-left: 0.25rem;
+    border-radius: 0 2rem 2rem 0;
+  }
+   
+  #slide-arrow-next {
+    right: 0;
+    padding-left: 0.75rem;
+    border-radius: 2rem 0 0 2rem;
+  } */
+  /* Remove carousel Slider */
+  .slides-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+ 
+/* WebKit */
+/* .slides-container::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+} */
+
+/* TESTING SLIDE COLORS */
+/* .fade:nth-child(1) {
+    background-color: #49b293;
+    display: flex;
+  }
+  
+  .fade:nth-child(2) {
+    background-color: #b03532;
+    display: flex;
+  }
+  
+  .fade:nth-child(3) {
+    background-color: #6a478f;
+    margin: 0;
+    display: flex;
+  }
+  
+  .fade:nth-child(4) {
+    background-color: #da6f2b;
+    display: flex;
+  } */
+
+
+/* carocel 2.0 */
+/* .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto
+}
+
+.mySlides {
+    display: none;
+    height: 400px;
+    border: solid 1px black;
+     
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #222;
+    font-weight: bold;
+    font-size: 30px;
+    transition: .6s ease;
+    border-radius: 0 3px 3px 0
+}
+
+.next {
+    right: -50px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev {
+    left: -50px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev:hover,
+.next:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding-top: 12px;
+  padding-bottom: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #222428
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease
+}
+
+.active,
+.dot:hover {
+background-color: #717171
+} */

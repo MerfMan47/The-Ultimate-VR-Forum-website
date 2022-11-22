@@ -1,0 +1,63 @@
+h1{
+    color: blue;
+}
+
+.displayBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid purple;
+    height: 900px;
+}
+
+.products{
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 1px solid green;
+    width: 80%;
+    height: 90%;
+    
+    
+}
+
+.pItem{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(211, 211, 211);
+    border: 1px solid rgb(0, 166, 243);
+    border-radius: 25px;
+    width: 21%;
+    height: 30%;
+
+    
+}
+
+li > img{
+    border: 2px solid blue;
+    width: 75%;
+    height: auto;
+
+    
+}
+
+.pName{
+    border: 1px solid red;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* FIGURE OUT HOW TO EXPAND ELEMENTS AND SHOW TEXT probably js */
+
+/* FOR LATER MAYBE */
+/* .grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+    .grow:hover { 
+    transform: scale(1.1); 
+} */
