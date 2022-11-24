@@ -48,9 +48,10 @@ h1{
 .ips > img{
     border: 2px solid blue;
     /* width: 75%;
-    width: auto;
-    height: auto;
-    margin: 10px; */
+    height: 50%;
+    width: auto; */
+    
+    /* margin: 10px; */
 }
 
 .ips > p{
